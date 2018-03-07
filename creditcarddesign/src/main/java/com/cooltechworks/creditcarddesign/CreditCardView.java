@@ -100,7 +100,6 @@ public class CreditCardView extends FrameLayout {
 
         TypedArray a = getContext().obtainStyledAttributes(attrs,
                 R.styleable.creditcard, 0, 0);
-        this.attrs = attrs;
 
         String cardHolderName = a.getString(R.styleable.creditcard_card_holder_name);
         String expiry = a.getString(R.styleable.creditcard_card_expiration);
