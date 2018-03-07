@@ -75,7 +75,7 @@ public class CreditCardView extends FrameLayout {
 
     public boolean isCardSideFront(){
         int cardSide = a.getInt(R.styleable.creditcard_card_side,CreditCardUtils.CARD_SIDE_FRONT);
-        return cardSide == CreditCardUtils.CARD_SIDE_FRONT);
+        return cardSide == CreditCardUtils.CARD_SIDE_FRONT;
     }
 
     interface ICustomCardSelector {
