@@ -42,7 +42,7 @@ public class CreditCardView extends FrameLayout {
 
     private CreditCardUtils.CardType mCardType;
 
-    private AttributeSet attrs;
+    private boolean isCardSideFront = true;
 
     int mCardnameLen;
 
@@ -76,10 +76,7 @@ public class CreditCardView extends FrameLayout {
     public CreditCardUtils.CardType getCardType() { return mCardType; }
 
     public boolean isCardSideFront(){
-        TypedArray a = getContext().obtainStyledAttributes(attrs,
-                R.styleable.creditcard, 0, 0);
-        int cardSide = a.getInt(R.styleable.creditcard_card_side,CreditCardUtils.CARD_SIDE_FRONT);
-        return cardSide == CreditCardUtils.CARD_SIDE_FRONT;
+        return isCardSideFront;
     }
 
     interface ICustomCardSelector {
@@ -142,7 +139,7 @@ public class CreditCardView extends FrameLayout {
         if(isImmediate) {
             frontContentView.setVisibility(ltr?VISIBLE:GONE);
             backContentView.setVisibility(ltr?GONE:VISIBLE);
-
+            isCardSideFront = frontContentView.getVisibility() == VISIBLE;
         }
         else {
 
@@ -214,6 +211,7 @@ public class CreditCardView extends FrameLayout {
 
     public void showFront() {
         flip(true,false);
+        isCardSideFront = true;
     }
 
     public void showFrontImmediate() {
@@ -222,6 +220,8 @@ public class CreditCardView extends FrameLayout {
 
     public void showBack() {
         flip(false,false);
+        isCardSideFront = false;
+
     }
 
     public void showBackImmediate() {
