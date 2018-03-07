@@ -10,12 +10,12 @@
     <string name="card_holder_name_sample">JOHN MATTHEW</string>
     <string name="card_holder">持卡人</string>
     <string name="expiry">到期日</string>
-    <string name="mm_yy">MM/YY</string>
+    <string name="mm_yy">月 / 年</string>
     <string name="card_expiry">到期日</string>
-    <string name="card_mm_yy">MM/YY</string>
+    <string name="card_mm_yy">月 / 年</string>
     <string name="hint_cvv_front">0000</string>
     <string name="name_on_card">NAME ON CARD</string>
-    <string name="card_number">CARD NUMBER</string>
+    <string name="card_number">卡号</string>
     <string name="error_invalid_month">Invalid month</string>
     <string name="error_card_expired">Card expired</string>
     <integer name="card_name_len">25</integer>
