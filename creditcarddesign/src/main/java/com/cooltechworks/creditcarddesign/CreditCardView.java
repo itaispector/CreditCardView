@@ -42,6 +42,8 @@ public class CreditCardView extends FrameLayout {
 
     private CreditCardUtils.CardType mCardType;
 
+    private AttributeSet attrs;
+
     int mCardnameLen;
 
     public CreditCardView(Context context) {
@@ -74,6 +76,8 @@ public class CreditCardView extends FrameLayout {
     public CreditCardUtils.CardType getCardType() { return mCardType; }
 
     public boolean isCardSideFront(){
+        TypedArray a = getContext().obtainStyledAttributes(attrs,
+                R.styleable.creditcard, 0, 0);
         int cardSide = a.getInt(R.styleable.creditcard_card_side,CreditCardUtils.CARD_SIDE_FRONT);
         return cardSide == CreditCardUtils.CARD_SIDE_FRONT;
     }
@@ -99,7 +103,7 @@ public class CreditCardView extends FrameLayout {
 
         TypedArray a = getContext().obtainStyledAttributes(attrs,
                 R.styleable.creditcard, 0, 0);
-
+        this.attrs = attrs;
 
         String cardHolderName = a.getString(R.styleable.creditcard_card_holder_name);
         String expiry = a.getString(R.styleable.creditcard_card_expiration);
